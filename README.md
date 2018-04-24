@@ -1,5 +1,5 @@
 ---
-services: Network
+services: network-watcher
 platforms: .Net
 author: martinsawicki
 ---

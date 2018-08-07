@@ -1,10 +1,10 @@
 ---
-services: network-watcher
-platforms: .Net
+services: virtual-network,network-watcher
+platforms: dotnet
 author: martinsawicki
 ---
 
-# Getting Started with Network - Verify Network Peering With Network Watcher - in .Net #
+# Use network watcher to check connectivity between virtual machines in peered networks #
 
           Azure Network sample for enabling and updating network peering between two virtual networks
          
@@ -34,7 +34,7 @@ author: martinsawicki
 
 To run this sample:
 
-Set the environment variable `AZURE_AUTH_LOCATION` with the full path for an auth file. See [how to create an auth file](https://github.com/Azure/azure-sdk-for-net/blob/Fluent/AUTH.md).
+Set the environment variable `AZURE_AUTH_LOCATION` with the full path for an auth file. See [how to create an auth file](https://github.com/Azure/azure-libraries-for-java/blob/master/AUTH.md).
 
     git clone https://github.com/Azure-Samples/network-dotnet-use-network-watcher-to-check-connectivity.git
 

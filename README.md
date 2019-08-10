@@ -1,4 +1,7 @@
 ---
+page_type: sample
+languages: java
+products: azure
 services: virtual-network,network-watcher
 platforms: dotnet
 author: yaohaizh

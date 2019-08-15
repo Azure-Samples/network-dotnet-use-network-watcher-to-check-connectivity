@@ -4,35 +4,29 @@ languages:
 - csharp
 products:
 - azure
-services: virtual-network,network-watcher
-platforms: dotnet
-author: yaohaizh
+extensions:
+- services: virtual-network,network-watcher
+- platforms: dotnet
 ---
 
 # Use network watcher to check connectivity between virtual machines in peered networks #
 
-          Azure Network sample for enabling and updating network peering between two virtual networks
-         
-          Summary ...
-         
-          - This sample uses Azure Network Watcher's connectivity check to verify connectivity between
-            two peered virtual networks.
-         
-          Details ...
-         
-          1. Define two virtual networks network "A" and network "B" with one subnet each
-         
-          2. Create two virtual machines, each within a separate network
-            - The virtual machines currently must use a special extension to support Network Watcher
-          3. Peer the networks...
-            - the peering will initially have default settings:
-            - each network's IP address spaces will be accessible from the other network
-            - no traffic forwarding will be enabled between the networks
-            - no gateway transit between one network and the other will be enabled
-         
-          4. Use Network Watcher to check connectivity between the virtual machines in different peering scenarios:
-            - both virtual machines accessible to each other (bi-directional)
-            - virtual machine A accessible to virtual machine B, but not the other way
+ Azure Network sample for enabling and updating network peering between two virtual networks
+ Summary ...
+ - This sample uses Azure Network Watcher's connectivity check to verify connectivity between
+   two peered virtual networks.
+ Details ...
+ 1. Define two virtual networks network "A" and network "B" with one subnet each
+ 2. Create two virtual machines, each within a separate network
+   - The virtual machines currently must use a special extension to support Network Watcher
+ 3. Peer the networks...
+   - the peering will initially have default settings:
+   - each network's IP address spaces will be accessible from the other network
+   - no traffic forwarding will be enabled between the networks
+   - no gateway transit between one network and the other will be enabled
+ 4. Use Network Watcher to check connectivity between the virtual machines in different peering scenarios:
+   - both virtual machines accessible to each other (bi-directional)
+   - virtual machine A accessible to virtual machine B, but not the other way
 
 
 ## Running this Sample ##

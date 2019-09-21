@@ -7,6 +7,7 @@ products:
 extensions:
 - services: virtual-network,network-watcher
 - platforms: dotnet
+description: "Azure Network sample for enabling and updating network peering between two virtual networks."
 ---
 
 # Use network watcher to check connectivity between virtual machines in peered networks #

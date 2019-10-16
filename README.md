@@ -10,13 +10,17 @@ extensions:
 description: "Azure Network sample for enabling and updating network peering between two virtual networks."
 ---
 
-# Use network watcher to check connectivity between virtual machines in peered networks #
+# Use network watcher to check connectivity between virtual machines in peered networks
 
  Azure Network sample for enabling and updating network peering between two virtual networks
- Summary ...
+
+## Summary
+
  - This sample uses Azure Network Watcher's connectivity check to verify connectivity between
    two peered virtual networks.
- Details ...
+
+## Details
+
  1. Define two virtual networks network "A" and network "B" with one subnet each
  2. Create two virtual machines, each within a separate network
    - The virtual machines currently must use a special extension to support Network Watcher
@@ -30,26 +34,23 @@ description: "Azure Network sample for enabling and updating network peering bet
    - virtual machine A accessible to virtual machine B, but not the other way
 
 
-## Running this Sample ##
+## Running this sample
 
 To run this sample:
 
 Set the environment variable `AZURE_AUTH_LOCATION` with the full path for an auth file. See [how to create an auth file](https://github.com/Azure/azure-libraries-for-net/blob/master/AUTH.md).
 
-    git clone https://github.com/Azure-Samples/network-dotnet-use-network-watcher-to-check-connectivity.git
+```bash
+git clone https://github.com/Azure-Samples/network-dotnet-use-network-watcher-to-check-connectivity.git
+cd network-dotnet-use-network-watcher-to-check-connectivity
+dotnet build
+bin\Debug\net452\VerifyNetworkPeeringWithNetworkWatcher.exe
+```
 
-    cd network-dotnet-use-network-watcher-to-check-connectivity
-
-    dotnet build
-
-    bin\Debug\net452\VerifyNetworkPeeringWithNetworkWatcher.exe
-
-## More information ##
+## More information
 
 [Azure Management Libraries for C#](https://github.com/Azure/azure-sdk-for-net/tree/Fluent)
 [Azure .Net Developer Center](https://azure.microsoft.com/en-us/develop/net/)
-If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
-
----
+If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212).
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

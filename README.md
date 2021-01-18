@@ -5,8 +5,8 @@ languages:
 products:
 - azure
 extensions:
-- services: virtual-network,network-watcher
-- platforms: dotnet
+  services: virtual-network,network-watcher
+  platforms: dotnet
 ---
 
 # Use network watcher to check connectivity between virtual machines in peered networks #

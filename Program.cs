@@ -53,12 +53,8 @@ namespace VerifyNetworkPeeringWithNetworkWatcher
             string vmName2 = Utilities.CreateRandomName("vm2-");
             string networkWatcherName = Utilities.CreateRandomName("netwch");
             string peeringABName = Utilities.CreateRandomName("peer");
-            string[] vmIPAddresses = new String[] {
-                /* within subnetA */ "10.0.0.8",
-                /* within subnetB */ "10.1.0.8"
-            };
 
-
+            try
             {
                 // Get default subscription
                 SubscriptionResource subscription = await client.GetDefaultSubscriptionAsync();
@@ -208,6 +204,7 @@ namespace VerifyNetworkPeeringWithNetworkWatcher
                 Utilities.Log("Connectivity from A to B: " + connectivityA2BResult.Value.NetworkConnectionStatus);
                 Utilities.Log("Connectivity from B to A: " + connectivityB2AResult.Value.NetworkConnectionStatus);
             }
+            finally
             {
                 try
                 {
@@ -231,19 +228,18 @@ namespace VerifyNetworkPeeringWithNetworkWatcher
 
         public static async Task Main(string[] args)
         {
-            var clientId = Environment.GetEnvironmentVariable("CLIENT_ID");
-            var clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
-            var tenantId = Environment.GetEnvironmentVariable("TENANT_ID");
-            var subscription = Environment.GetEnvironmentVariable("SUBSCRIPTION_ID");
-            ClientSecretCredential credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
-            ArmClient client = new ArmClient(credential, subscription);
-
-            await RunSample(client);
-
             try
             {
                 //=================================================================
                 // Authenticate
+                var clientId = Environment.GetEnvironmentVariable("CLIENT_ID");
+                var clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
+                var tenantId = Environment.GetEnvironmentVariable("TENANT_ID");
+                var subscription = Environment.GetEnvironmentVariable("SUBSCRIPTION_ID");
+                ClientSecretCredential credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
+                ArmClient client = new ArmClient(credential, subscription);
+
+                await RunSample(client);
             }
             catch (Exception ex)
             {
